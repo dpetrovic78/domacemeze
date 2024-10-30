@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Domaće meze na Sremski način</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel='stylesheet' href='css/foundation.css'>
+
+    <script type="text/javascript" src='./js/jquery-3.7.1.min.js'></script>
+    <!--script type="text/javascript" src='js/slides.js'></script-->
+    <script type="text/javascript" src='./js/underscore-min.js'></script>
+    <script type="text/javascript" src='./js/smtp.js'></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/email.min.js"></script>
+
+</head>
+
+<body class="background">
+    <header class="intro">
+        <h1>Domaće meze</h1>
+        <h2>na Sremski način</h2>
+    </header>
+
+    <main>
+
+        <div class="row">
+            <nav class="top-bar" data-topbar>
+                <ul class="title-area">
+                    <li class="name">
+                        <span class="header">Pošaljite listu željenih proizvoda na email ili pozovite na <a
+                                href="tel:0652164696" style="white-space: nowrap;">&#128222; 065/216-46-96</a><span>
+                    </li>
+                </ul>
+                <!--section class="top-bar-section">
+                    <ul class="left">
+                        <li><a href="#">made for you &hearts;</a>
+                        </li>
+                    </ul>
+                </section-->
+            </nav>
+
+
+            <div class="medium-4  columns">
+                <div class="cart">
+
+                    <h1>Moja korpa</h1>
+                    <!--div id="cartItems">Dodavanje u korpu...</div-->
+                    UKUPNO: <strong id="totalPrice">0 $</strong>
+
+                    <div class="row">
+                        <div class="medium-6 columns">
+                            <button class="tiny secondary buttonclear" id="clear">Očisti korpu</button>
+                        </div>
+
+                        <!--div class="medium-6 columns">
+                            <button method="post" id="posalji" class="tiny disabled" title="Pošalji porudžbinu"
+                                type="submit">Pošalji</button>
+                        </div-->
+                    </div>
+
+                    <script type="text/javascript">
+                        (function () {
+                            emailjs.init("-276bDRWK_0QaEQd6"); // Replace with your EmailJS user ID
+                        })();
+                    </script>
+
+                    <form id="cartT2">
+
+                        <div id="cartItems">Dodavanje u korpu...</div>
+
+                        <span class="tableheader">PODACI ZA ISPORUKU</span>
+
+                        <table>
+                            <tr>
+                                <td>Ime i prezime:</td>
+                                <td><input type="text" class="input-name-field tablefield" name="from_name" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Ulica i broj:</td>
+                                <td><input type="text" class="input-name-field tablefield" name="street" value=""></td>
+                            </tr>
+                            <tr>
+                                <td>Mesto:</td>
+                                <td><input type="text" class="input-name-field tablefield" name="city" value=""></td>
+                            </tr>
+                            <tr>
+                                <td>Poštanski broj:</td>
+                                <td><input type="text" class="input-name-field tablefield" name="postanskibroj" value=""></td>
+                            </tr>
+                            <tr>
+                                <td>Kontakt telefon:</td>
+                                <td><input type="text" class="input-name-field tablefield" name="phone" value=""></td>
+                            </tr>
+                        </table>
+
+                        <input type="hidden" id="selecteditems" name="selecteditems" value="">
+                        <input type="hidden" id="ukupno" name="ukupno" value="">
+
+                        <button id="posalji2" class="tiny buttonsend" type="submit">Pošalji porudžbinu</button>
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="medium-8 columns">
+                <h1 class="text-center uppercase">Proizvodi</h1>
+                <div class="products">
+
+                    <!-- Slideshow container -->
+                    <div class="slideshow-container">
+
+                        <!-- pecenica -->
+                        <div class="product columns mySlides fade" data-name="Pečenica" data-price="1600" data-id="1">
+                            <h3>Pečenica</h3>
+                            <div class="numbertext">1/12</div>
+                            <img src="./img/pecenica03.jpg" alt="pečenica" style="width:100%" />
+                            <text class="in-line">Cena: 1600 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+                        <div class="product columns mySlides fade" data-name="Pečenica" data-price="1600" data-id="1">
+                            <h3>Pečenica</h3>
+                            <div class="numbertext">2/12</div>
+                            <img src="./img/pecenica01.jpg" alt="pečenica" style="width:100%" />
+                            <text class="in-line">Cena: 1600 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+
+                        <!-- kobaja -->
+                        <div class="product columns mySlides fade" data-name="Sremska kobasica" data-price="1300"
+                            data-id="2">
+                            <h3>Sremska kobasica</h3>
+                            <div class="numbertext">3/12</div>
+                            <img src="./img/kobaja04.jpg" alt="sremska-kobasica" style="width:100%" />
+                            <text class="in-line">Cena: 1300 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+                        <div class="product columns mySlides fade" data-name="Sremska kobasica" data-price="1300"
+                            data-id="2">
+                            <h3>Sremska kobasica</h3>
+                            <div class="numbertext">4/12</div>
+                            <img src="./img/sremska-kobasica.jpg" alt="sremska-kobasica" style="width:100%" />
+                            <text class="in-line">Cena: 1300 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+                        <div class="product columns mySlides fade" data-name="Sremska kobasica" data-price="1300"
+                            data-id="2">
+                            <h3>Sremska kobasica</h3>
+                            <div class="numbertext">5/12</div>
+                            <img src="./img/kobaja03.jpg" alt="sremska-kobasica" style="width:100%" />
+                            <text class="in-line">Cena: 1300 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+                        <div class="product columns mySlides fade" data-name="Sremska kobasica" data-price="1300"
+                            data-id="2">
+                            <h3>Sremska kobasica</h3>
+                            <div class="numbertext">6/12</div>
+                            <img src="./img/kobaja01.jpg" alt="sremska-kobasica" style="width:100%" />
+                            <text class="in-line">Cena: 1300 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+
+                        <!-- slanina -->
+                        <div class="product columns mySlides fade" data-name="Slanina pančeta" data-price="1450"
+                            data-id="3">
+                            <h3>Slanina pančeta</h3>
+                            <div class="numbertext">7/12</div>
+                            <img src="./img/slanina-panceta.jpg" alt="slanina-panceta" style="width:100%" />
+                            <text class="in-line">Cena: 1450 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+
+                        <!-- suvi vrat -->
+                        <div class="product columns mySlides fade" data-name="Suvi vrat" data-price="1700" data-id="5">
+                            <h3>Suvi vrat</h3>
+                            <div class="numbertext">8/12</div>
+                            <img src="./img/suvivrat01.jpg" alt="suvi-vrat" style="width:100%" />
+                            <text class="in-line">Cena: 1700 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+                        <div class="product columns mySlides fade" data-name="Suvi vrat" data-price="1700" data-id="5">
+                            <h3>Suvi vrat</h3>
+                            <div class="numbertext">9/12</div>
+                            <img src="./img/suvivrat03.jpg" alt="suvi-vrat" style="width:100%" />
+                            <text class="in-line">Cena: 1700 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+
+                        <!-- sunka -->
+                        <div class="product columns mySlides fade" data-name="But sa kožom (šunka)" data-price="1700"
+                            data-id="6">
+                            <h3>But sa kožom (šunka)</h3>
+                            <div class="numbertext">10/12</div>
+                            <img src="./img/sunka.jpg" alt="spic-rebra" style="width:100%" />
+                            <text class="in-line">Cena: 1700 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+
+                        <!-- spic-rebra -->
+                        <div class="product columns mySlides fade" data-name="Špic rebra" data-price="1100" data-id="7">
+                            <h3>Špic rebra</h3>
+                            <div class="numbertext">11/12</div>
+                            <img src="./img/spicrebra03.jpg" alt="spic-rebra" style="width:100%" />
+                            <text class="in-line">Cena: 1100 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+                        <div class="product columns mySlides fade" data-name="Špic rebra" data-price="1100" data-id="7">
+                            <h3>Špic rebra sa mesom</h3>
+                            <div class="numbertext">12/12</div>
+                            <img src="./img/spicrebra02.jpg" alt="spic-rebra" style="width:100%" />
+                            <text class="in-line">Cena: 1100 RSD/kg </text>
+                            <input type="text" class="count" value="1" />
+                            <button class="tiny">Dodaj u korpu</button>
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+
+
+                        <!-- cenovnik -->
+                        <div class="product columns mySlides fade" data-name="Cenovnik" data-price="0" data-id="0">
+                            <h3>Cenovnik</h3>
+                            <img src="./img/cenovnik.jpg" alt="cenovnik" style="width:100%" />
+                            <!-- Next and previous buttons -->
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <script type="text/template" id="cartT">
+                    <% _.each(items, function (item) { %> 
+                        <div class = "panel">
+                            <h3 id='item_name'> <%= item.name %> </h3>
+                            <span class="label">
+                                <%= item.count %> kg<% if(item.count > 1) {%><%}%> za 
+                                <%= item.total %> RSD
+                            </span >
+                        </div>
+                    <% }); 
+                    %>
+            </script>
+
+            <script type="text/javascript">
+                document.getElementById('cartT2').addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    emailjs.sendForm('service_aq13mps', 'template_74qq41r', this)
+                        .then(function () {
+                            alert('Kupovina uspešno obavljena!');
+                        }, function (error) {
+                            alert('Greška prilikom slanja email-a: ' + JSON.stringify(error));
+                        });
+                });
+            </script>
+
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    let dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = slides.length }
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                }
+            </script>
+
+    </main>
+
+
+    <footer class="credit">Domaće Meze na Sremski način
+        <a title="Domaće meze na Sremski način" href="https://www.facebook.com/domace.meze.na.sremski.nacin"
+            target="_blank">Facebook</a>
+        <a title="Domace meze na Sremski način" href="https://www.instagram.com/domace.meze"
+            target="_blank">Instagram</a>
+    </footer>
+
+
+</body>
+
+</html>
